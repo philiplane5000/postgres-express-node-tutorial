@@ -1,4 +1,5 @@
 const todosController = require('../controllers').todos;
+const todoItemsController = require('../controllers').todoItems;
 
 module.exports = (app) => {
     
@@ -7,4 +8,6 @@ module.exports = (app) => {
   }));
 
   app.post('/api/todos', todosController.create);
+  app.post('/api/todos/:todoId/items', todoItemsController.create);
+  app.get('/api/todos', todosController.list);
 };
